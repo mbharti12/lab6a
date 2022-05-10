@@ -252,10 +252,10 @@ void WordCount::addAllWords(const std::string& text) {
 	string word = "";
 
 	for (size_t i = 0; i < text.length(); i++){
-		cout << text.at(i) << endl;
+		//cout << text.at(i) << endl;
 		if (text.at(i) == ' ' || text.at(i) == ','){
 			incrWordCount(word);
-			cout << word << endl;
+			//cout << word << endl;
 			word = "";
 		}
 		else{
@@ -263,7 +263,7 @@ void WordCount::addAllWords(const std::string& text) {
 				if (i + 1 < text.length()){
 					if (text.at(i + 1) == 't' || text.at(i + 1) == 'n'){
 						incrWordCount(word);
-						cout << word << endl;
+						//cout << word << endl;
 						word = "";
 					}
 				}
