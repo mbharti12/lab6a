@@ -235,13 +235,55 @@ int main(){
     out2.str("");
     out2.clear();
 
-    //test addAllWords
+    //test addAllWords (and above two functions)
     cout << "testing addAllWords()" << endl;
     WordCount w6;
-    w6.addAllWords("Sentence is a sentence");
     ostringstream out3;
+
+    w6.addAllWords("Sentence is a sentence");
     w6.dumpWordsSortedByWord(out3);
     cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+    w6.addAllWords("this is another sentence");
+    w6.dumpWordsSortedByWord(out3);
+    cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+    w6.addAllWords("");
+    w6.dumpWordsSortedByWord(out3);
+    cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+    w6.addAllWords("THIS IS,ANOTHER,SENTENCE,,,,,,,");
+    w6.dumpWordsSortedByWord(out3);
+    cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+    w6.addAllWords(",,,\t\t\t\t\t,,,,");
+    w6.dumpWordsSortedByWord(out3);
+    cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+    w6.addAllWords("\n\n\n\nggggg\\\\hh\nnnntt       chips//");
+    w6.dumpWordsSortedByWord(out3);
+    cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+    w6.addAllWords("chips\nare\na\tgood,snack ");
+    w6.dumpWordsSortedByWord(out3);
+    cout << out3.str() << endl;
+    out3.str("");
+    out3.clear();
+
+
+
 }
 string makeValidWord(const std::string & word) {
 	string validWord = "";

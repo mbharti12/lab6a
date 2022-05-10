@@ -258,27 +258,32 @@ void WordCount::addAllWords(const std::string& text) {
 	//so once we hit one of the above four symbols, we add the word to the hash table using the increment function and then reset the string to continue
 	//can use if...else chain to check for the value of the characters
 	string word = "";
-
 	for (size_t i = 0; i < text.length(); i++){
 		//cout << text.at(i) << endl;
-		if (text.at(i) == ' ' || text.at(i) == ','){
+		if (text.at(i) == ' ' || text.at(i) == ',' || text.at(i) == '\n' || text.at(i) == '\t'){
 			incrWordCount(word);
 			//cout << word << endl;
 			word = "";
 		}
+		// else if (i < text.length() - 1){
+			
+
+		// }
 		else{
-			if (text.at(i) == '\\'){
-				if (i + 1 < text.length()){
-					if (text.at(i + 1) == 't' || text.at(i + 1) == 'n'){
-						incrWordCount(word);
-						//cout << word << endl;
-						word = "";
-					}
-				}
-			}
-			else{
-				word+=(text.at(i));
-			}
+			//not able to check if a character is a backslash
+			// if (text.at(i) == '\\'){
+			// 	cout << "HELLO" << endl;
+			// 	if (i + 1 < text.length()){
+			// 		if (text.at(i + 1) == 't' || text.at(i + 1) == 'n'){
+			// 			incrWordCount(word);
+			// 			cout << word << endl;
+			// 			word = "";
+			// 		}
+			// 	}
+			// }
+			// else{
+			word+=(text.at(i));
+			//}
 		}
 	}
 	incrWordCount(word);
