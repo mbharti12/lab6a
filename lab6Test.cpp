@@ -180,14 +180,60 @@ int main(){
     //test dumpWordsSortedByWord
     cout << "testing dumpWordsSortedByWord()" << endl;
     ostringstream out;
+
     w.dumpWordsSortedByWord(out);
     cout << out.str() << endl;
+    out.str("");
+    out.clear();
+
+    w2.dumpWordsSortedByWord(out);
+    cout << out.str() << endl;
+    out.str("");
+    out.clear();
+
+    w3.dumpWordsSortedByWord(out);
+    cout << out.str() << endl;
+    out.str("");
+    out.clear();
+
+    w4.dumpWordsSortedByWord(out);
+    cout << out.str() << endl;
+    out.str("");
+    out.clear();
+
+    w5.dumpWordsSortedByWord(out);
+    cout << out.str() << endl;
+    out.str("");
+    out.clear();
 
     //test dumpWordsSortedByOccurence
     cout << "testing dumpWordsSortedByOccurence()" << endl;
     ostringstream out2;
+
     w.dumpWordsSortedByOccurence(out2);
     cout << out2.str() << endl;
+    out2.str("");
+    out2.clear();
+
+    w2.dumpWordsSortedByOccurence(out2);
+    cout << out2.str() << endl;
+    out2.str("");
+    out2.clear();
+
+    w3.dumpWordsSortedByOccurence(out2);
+    cout << out2.str() << endl;
+    out2.str("");
+    out2.clear();
+
+    w4.dumpWordsSortedByOccurence(out2);
+    cout << out2.str() << endl;
+    out2.str("");
+    out2.clear();
+
+    w5.dumpWordsSortedByOccurence(out2);
+    cout << out2.str() << endl;
+    out2.str("");
+    out2.clear();
 
     //test addAllWords
     cout << "testing addAllWords()" << endl;
@@ -205,31 +251,25 @@ string makeValidWord(const std::string & word) {
 	int validStartingIndex = 0;
 	int validEndingIndex = 0;
 
-	for (int i = 0; i < word.size(); i++){
-		// if (word.at(i) != '\'' && word.at(i) != '-'){
-		// 	validStartingIndex = i;
-		// 	break;
-		// }
+	for (size_t i = 0; i < word.size(); i++){
 		if (isalpha(word.at(i))){
             isAlpha = true;
 			validStartingIndex = i;
 			break;
 		}
 	}
+
     if (!isAlpha){
         return "";
     }
     
 	for (int i = word.size() - 1; i >= 0; i--){
-		// if (word.at(i) != '\'' && word.at(i) != '-'){
-		// 	validEndingIndex = i;
-		// 	break;
-		// }
 		if (isalpha(word.at(i))){
 			validEndingIndex = i;
 			break;
 		}
 	}
+
 	for (int i = validStartingIndex; i < validEndingIndex + 1; i++){
 		c = word.at(i);
 

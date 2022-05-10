@@ -4,9 +4,17 @@
 
 using namespace std;
 
+// struct compOperator1{
+//     bool operator() (pair<string, int> p1, pair<string, int> p2) {
+//         if ((p1.first).compare(p2.first) < 0){
+//             return true;
+//         }
+//         return false;
+//     }
+// }comp1;
 struct compOperator1{
     bool operator() (pair<string, int> p1, pair<string, int> p2) {
-        if ((p1.first).compare(p2.first) < 0){
+        if ((p2.first).compare(p1.first) < 0){
             return true;
         }
         return false;
