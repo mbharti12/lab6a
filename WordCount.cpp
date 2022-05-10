@@ -251,7 +251,7 @@ void WordCount::addAllWords(const std::string& text) {
 	//can use if...else chain to check for the value of the characters
 	string word = "";
 
-	for (int i = 0; i < text.length(); i++){
+	for (size_t i = 0; i < text.length(); i++){
 		cout << text.at(i) << endl;
 		if (text.at(i) == ' ' || text.at(i) == ','){
 			incrWordCount(word);
